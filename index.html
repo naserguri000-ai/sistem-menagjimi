@@ -2121,7 +2121,7 @@
     
     let teacher = systemData.teachers.find(t => t.classId === classObj.id);
     let teacherName = teacher ? teacher.name : '__________________';
-    let principalName = systemData.schoolInfo.principal || 'Drejtori';
+    let principalName = systemData.schoolInfo.principal || 'Drejtoresha';
     
     // Ndërto tabelën e lëndëve - 2 kolona për të kursyer hapësirë
     let subjectsHtml = '';
@@ -2141,8 +2141,8 @@
         subjectsHtml += `
             <tr>
                 <td style="padding: 3px 4px; border: 1px solid #333; text-align: left; font-size: 9px;">${escapeHtml(sub.name)}</td>
-                <td style="padding: 3px 4px; border: 1px solid #333; text-align: center; font-size: 9px; width: 35px;"><strong>${gradeVal || '-'}</strong></td>
-                <td style="padding: 3px 4px; border: 1px solid #333; text-align: left; font-size: 9px;">${gradeDesc}</td>
+                <td style="padding: 3px 4px; border: 1px solid #333; text-align: center; font-size: 14px; width: 35px;"><strong>${gradeVal || '-'}</strong></td>
+                <td style="padding: 3px 4px; border: 1px solid #333; text-align: left; font-size: 14px;">${gradeDesc}</td>
             </tr>`;
     }
     
@@ -2154,7 +2154,7 @@
         <style>
             * { margin: 0; padding: 0; box-sizing: border-box; }
             @page { 
-                size: A4 portrait; 
+                size: 220-400; 
                 margin: 8mm;
             }
             body { 
@@ -2209,7 +2209,7 @@
                 display: flex; 
                 justify-content: space-between; 
                 margin: 2mm 0; 
-                font-size: 10px; 
+                font-size: 12px; 
                 flex-wrap: wrap; 
                 gap: 5px; 
             }
@@ -2229,7 +2229,7 @@
                 color: white; 
                 font-weight: bold; 
                 padding: 4px 4px;
-                font-size: 10px;
+                font-size: 12px;
             }
             .certificate-avg-box { 
                 background: #e8f5e9; 
@@ -2312,7 +2312,7 @@
             </div>
             
             <div class="certificate-absences-box">
-                <strong style="font-size: 11px;">MUNGESAT</strong>
+                <strong style="font-size: 12px;">MUNGESAT</strong>
                 <div style="display: flex; justify-content: space-between; margin-top: 2mm; font-size: 10px;">
                     <span>✅ Me arsye: ${abs.withReason}</span>
                     <span>❌ Pa arsye: ${abs.withoutReason}</span>
@@ -2326,8 +2326,8 @@
                     <div style="font-size: 9px; margin-top: 2mm;">${escapeHtml(teacherName)}</div>
                 </div>
                 <div class="certificate-signature">
-                    <div class="certificate-signature-line">Drejtori</div>
-                    <div style="font-size: 9px; margin-top: 2mm;">${escapeHtml(principalName)}</div>
+                    <div class="certificate-signature-line">Drejtoresha</div>
+                    <div style="font-size: 12px; margin-top: 2mm;">${escapeHtml(principalName)}</div>
                 </div>
                 <div class="certificate-signature">
                     <div class="certificate-signature-line">Vula e shkollës</div>
@@ -2381,7 +2381,7 @@
         let allHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Dëftesat - ' + className + '</title>';
         allHtml += '<style>';
         allHtml += '*{margin:0;padding:0;box-sizing:border-box;}';
-        allHtml += '@page{size:A4 portrait; margin:8mm;}';
+        allHtml += '@page{size:220-430; margin:8mm;}';
         allHtml += 'body{background:white;font-family:"Times New Roman", Times, serif;margin:0;padding:0;}';
         allHtml += '.certificate{width:100%;max-width:210mm;background:white;padding:5mm 8mm;margin:0 auto;border:2px solid #d4af37;box-sizing:border-box;page-break-after:always;page-break-inside:avoid;}';
         allHtml += '.certificate:last-child{page-break-after:auto;}';
@@ -2392,8 +2392,8 @@
         allHtml += '.certificate-student{font-size:18px;font-weight:bold;text-align:center;margin:4mm 0;padding:3mm;border-bottom:1px dashed #999;border-top:1px dashed #999;background:#f5f5f5;}';
         allHtml += '.certificate-info{display:flex;justify-content:space-between;margin:2mm 0;font-size:10px;flex-wrap:wrap;gap:5px;}';
         allHtml += 'table{width:100%;border-collapse:collapse;margin:3mm 0;}';
-        allHtml += 'th,td{border:1px solid #333;padding:3px 4px;text-align:center;font-size:9px;}';
-        allHtml += 'th{background:#0b4b6e;color:white;font-weight:bold;padding:4px;font-size:10px;}';
+        allHtml += 'th,td{border:1px solid #333;padding:3px 4px;text-align:center;font-size:12px;}';
+        allHtml += 'th{background:#0b4b6e;color:white;font-weight:bold;padding:4px;font-size:13px;}';
         allHtml += '.certificate-avg-box{background:#e8f5e9;padding:3mm;text-align:center;border-radius:6px;margin:3mm 0;}';
         allHtml += '.certificate-avg-value{font-size:20px;font-weight:bold;color:#2e7d32;}';
         allHtml += '.certificate-absences-box{background:#fff3e0;padding:3mm;margin:3mm 0;border-radius:6px;}';
@@ -2427,9 +2427,9 @@
                 let gradeDesc = gradeNum === 5 ? 'Shkëlqyeshëm' : (gradeNum === 4 ? 'Shumë mirë' : (gradeNum === 3 ? 'Mirë' : (gradeNum === 2 ? 'Mjaftueshëm' : (gradeNum === 1 ? 'Pamjaftueshëm' : 'I panotuar'))));
                 
                 subjectsHtml += '<tr>';
-                subjectsHtml += '<td style="padding: 3px 4px; border: 1px solid #333; text-align: left; font-size: 9px;">' + sub.name + '</td>';
-                subjectsHtml += '<td style="padding: 3px 4px; border: 1px solid #333; text-align: center; font-size: 9px; width: 35px;"><strong>' + (gradeVal || '-') + '</strong></td>';
-                subjectsHtml += '<td style="padding: 3px 4px; border: 1px solid #333; text-align: left; font-size: 9px;">' + gradeDesc + '</td>';
+                subjectsHtml += '<td style="padding: 3px 4px; border: 1px solid #333; text-align: left; font-size: 12px;">' + sub.name + '</td>';
+                subjectsHtml += '<td style="padding: 3px 4px; border: 1px solid #333; text-align: center; font-size: 12px; width: 35px;"><strong>' + (gradeVal || '-') + '</strong></td>';
+                subjectsHtml += '<td style="padding: 3px 4px; border: 1px solid #333; text-align: left; font-size: 12px;">' + gradeDesc + '</td>';
                 subjectsHtml += '</tr>';
             }
             
@@ -2444,20 +2444,20 @@
             allHtml += '<div><strong>Viti:</strong> ' + systemData.schoolInfo.year + '</div>';
             allHtml += '<div><strong>Periudha:</strong> ' + semesterName + '</div>';
             allHtml += '<div><strong>Data:</strong> ' + date + '</div></div>';
-            allHtml += '<div style="margin: 2mm 0; font-size: 10px;"><strong>Sjellja:</strong> ' + behavior + '</div>';
+            allHtml += '<div style="margin: 2mm 0; font-size: 13px;"><strong>Sjellja:</strong> ' + behavior + '</div>';
             allHtml += '<table><thead><tr style="background:#0b4b6e; color:white;"><th style="padding:4px;">Lënda</th><th style="padding:4px; width:35px;">Nota</th><th style="padding:4px;">Përshkrimi</th></tr></thead><tbody>' + subjectsHtml + '</tbody></table>';
             allHtml += '<div class="certificate-avg-box"><div class="certificate-avg-value">' + avg + '</div><div>Mesatarja: ' + successDesc + '</div>';
             if (hasOne) {
-                allHtml += '<div style="color: #c62828; font-size: 9px; margin-top: 2px;">⚠️ Ka ' + onesCount + ' notë/nota 1</div>';
+                allHtml += '<div style="color: #c62828; font-size: 12px; margin-top: 2px;">⚠️ Ka ' + onesCount + ' notë/nota 1</div>';
             }
             allHtml += '</div>';
-            allHtml += '<div class="certificate-absences-box"><strong>MUNGESAT</strong><div style="display: flex; justify-content: space-between; margin-top: 2mm; font-size: 10px;">';
+            allHtml += '<div class="certificate-absences-box"><strong>MUNGESAT</strong><div style="display: flex; justify-content: space-between; margin-top: 2mm; font-size: 12px;">';
             allHtml += '<span>✅ Me arsye: ' + abs.withReason + '</span>';
             allHtml += '<span>❌ Pa arsye: ' + abs.withoutReason + '</span>';
             allHtml += '<span><strong>📊 Gjithsej: ' + abs.total + '</strong></span></div></div>';
             allHtml += '<div class="certificate-signatures">';
-            allHtml += '<div class="certificate-signature"><div class="certificate-signature-line">Kujdestari</div><div style="font-size: 9px; margin-top: 2mm;">' + teacherName + '</div></div>';
-            allHtml += '<div class="certificate-signature"><div class="certificate-signature-line">Drejtori</div><div style="font-size: 9px; margin-top: 2mm;">' + principalName + '</div></div>';
+            allHtml += '<div class="certificate-signature"><div class="certificate-signature-line">Kujdestari</div><div style="font-size: 12px; margin-top: 2mm;">' + teacherName + '</div></div>';
+            allHtml += '<div class="certificate-signature"><div class="certificate-signature-line">Drejtoresha</div><div style="font-size: 12px; margin-top: 2mm;">' + principalName + '</div></div>';
             allHtml += '<div class="certificate-signature"><div class="certificate-signature-line">Vula e shkollës</div></div></div>';
             allHtml += '</div>';
         }
@@ -2944,24 +2944,24 @@
     let printHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>RAPORTI I DREJTORISË - ' + activeName + '</title>';
     printHtml += '<style>';
     printHtml += '*{margin:0;padding:0;box-sizing:border-box;}';
-    printHtml += '@page{size:A4 portrait; margin:8mm;}';
+    printHtml += '@page{size:230-370; margin:8mm;}';
     printHtml += 'body{font-family:"Times New Roman", Times, serif;margin:0;padding:0;background:white;}';
     printHtml += '.report-container{max-width:210mm;margin:0 auto;padding:5mm;background:white;}';
     printHtml += '.report-header{text-align:center;margin-bottom:5mm;border-bottom:2px solid #0b4b6e;padding-bottom:3mm;}';
     printHtml += '.report-title{font-size:20px;font-weight:bold;color:#0b4b6e;margin-bottom:2mm;}';
-    printHtml += '.report-subtitle{font-size:11px;margin-top:1mm;color:#333;}';
-    printHtml += '.school-name{font-size:14px;font-weight:bold;color:#0b4b6e;margin-bottom:2mm;}';
-    printHtml += '.info-grid{display:flex;justify-content:space-between;margin:3mm 0;padding:2mm;background:#f5f5f5;border-radius:4px;font-size:10px;}';
+    printHtml += '.report-subtitle{font-size:12px;margin-top:1mm;color:#333;}';
+    printHtml += '.school-name{font-size:12px;font-weight:bold;color:#0b4b6e;margin-bottom:2mm;}';
+    printHtml += '.info-grid{display:flex;justify-content:space-between;margin:3mm 0;padding:2mm;background:#f5f5f5;border-radius:4px;font-size:12px;}';
     printHtml += 'table{width:100%;border-collapse:collapse;margin:3mm 0;}';
-    printHtml += 'th,td{border:1px solid #333;padding:3px 4px;text-align:center;font-size:9px;}';
+    printHtml += 'th,td{border:1px solid #333;padding:3px 4px;text-align:center;font-size:12px;}';
     printHtml += 'th{background:#0b4b6e;color:white;font-weight:bold;padding:4px;}';
     printHtml += '.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:3mm 0;}';
     printHtml += '.stat-card{background:#f0f0f0;padding:2mm;border-radius:6px;text-align:center;}';
     printHtml += '.stat-value{font-size:18px;font-weight:bold;color:#0b4b6e;}';
     printHtml += '.signature-line{display:flex;justify-content:space-between;margin-top:5mm;padding-top:3mm;border-top:2px solid #333;}';
-    printHtml += '.signature{text-align:center;width:140px;}';
+    printHtml += '.signature{text-align:center;width:120px;}';
     printHtml += '.signature-line-bottom{border-top:1px solid #333;margin-top:4mm;padding-top:1mm;width:100%;}';
-    printHtml += '.summary-box{margin:3mm 0;padding:2mm;background:#e8f5e9;border-radius:4px;font-size:9px;}';
+    printHtml += '.summary-box{margin:3mm 0;padding:2mm;background:#e8f5e9;border-radius:4px;font-size:12px;}';
     printHtml += 'h3{color:#0b4b6e;margin:3mm 0 2mm 0;font-size:12px;}';
     printHtml += '@media print{body{margin:0;padding:0;} .report-container{padding:0;}}';
     printHtml += '</style></head><body>';
@@ -2972,27 +2972,27 @@
     printHtml += '<div class="report-title">RAPORTI I DREJTORISË</div>';
     printHtml += '<div class="report-subtitle">Aktivi: ' + activeName + '</div>';
     printHtml += '<div class="report-subtitle">Periudha: ' + semesterName + ' | Viti: ' + systemData.schoolInfo.year + '</div>';
-    printHtml += '<div class="report-subtitle">Data: ' + date + ' | Drejtori: ' + systemData.schoolInfo.principal + '</div>';
+    printHtml += '<div class="report-subtitle">Data: ' + date + ' | Drejtoresha: ' + systemData.schoolInfo.principal + '</div>';
     printHtml += '</div>';
     
     // Statistikat kryesore
     printHtml += '<div class="stats-grid">';
-    printHtml += '<div class="stat-card"><strong>📚 KLASA</strong><div class="stat-value">' + globalStats.classesStats.length + '</div></div>';
-    printHtml += '<div class="stat-card"><strong>👨‍🎓 NXËNËS</strong><div class="stat-value">' + globalStats.totalStudents + '</div><div>👦 ' + globalStats.totalMale + ' | 👧 ' + globalStats.totalFemale + '</div></div>';
-    printHtml += '<div class="stat-card"><strong>📊 MESATARJA</strong><div class="stat-value">' + globalStats.overallAvg + '</div></div>';
-    printHtml += '<div class="stat-card"><strong>⚠️ NOTA 1</strong><div class="stat-value">' + (globalStats.weakOnes.one + globalStats.weakOnes.two + globalStats.weakOnes.threePlus) + '</div></div>';
+    printHtml += '<div class="stat-card"><strong> KLASA</strong><div class="stat-value">' + globalStats.classesStats.length + '</div></div>';
+    printHtml += '<div class="stat-card"><strong> NXËNËS</strong><div class="stat-value">' + globalStats.totalStudents + '</div><div>M ' + globalStats.totalMale + ' | F ' + globalStats.totalFemale + '</div></div>';
+    printHtml += '<div class="stat-card"><strong> MESATARJA</strong><div class="stat-value">' + globalStats.overallAvg + '</div></div>';
+    printHtml += '<div class="stat-card"><strong> NOTA 1</strong><div class="stat-value">' + (globalStats.weakOnes.one + globalStats.weakOnes.two + globalStats.weakOnes.threePlus) + '</div></div>';
     printHtml += '</div>';
     
     // Mungesat
     printHtml += '<div class="info-grid">';
-    printHtml += '<div><strong>📅 MUNGESAT</strong></div>';
-    printHtml += '<div>✅ Me arsye: ' + globalStats.totalAbsencesWR + '</div>';
-    printHtml += '<div>❌ Pa arsye: ' + globalStats.totalAbsencesWOR + '</div>';
-    printHtml += '<div>📌 Gjithsej: ' + (globalStats.totalAbsencesWR + globalStats.totalAbsencesWOR) + '</div>';
+    printHtml += '<div><strong> MUNGESAT</strong></div>';
+    printHtml += '<div> Me arsye: ' + globalStats.totalAbsencesWR + '</div>';
+    printHtml += '<div> Pa arsye: ' + globalStats.totalAbsencesWOR + '</div>';
+    printHtml += '<div> Gjithsej: ' + (globalStats.totalAbsencesWR + globalStats.totalAbsencesWOR) + '</div>';
     printHtml += '</div>';
     
     // Tabela e klasave
-    printHtml += '<h3>📋 PËRMBLEDHJA SIPAS KLASAVE</h3>';
+    printHtml += '<h3> PËRMBLEDHJA SIPAS KLASAVE</h3>';
     printHtml += '<table><thead><tr>';
     printHtml += '<th>Klasa</th><th>Nxënës</th><th>Mes.</th><th>Shkëlq.</th><th>Sh.mirë</th><th>Mirë</th><th>Mjaft.</th><th>Pamj.</th><th>Mung.</th><th>Nota1</th>';
     printHtml += '</tr></thead><tbody>';
@@ -3031,27 +3031,7 @@
     printHtml += '<td>' + ((globalStats.weakOnes?.one || 0) + (globalStats.weakOnes?.two || 0) + (globalStats.weakOnes?.threePlus || 0)) + '</td>';
     printHtml += '</tr>';
     printHtml += '</tbody></table>';
-    
-    // Përmbledhje
-    printHtml += '<div class="summary-box">';
-    printHtml += '<strong>📊 PËRMBLEDHJE E PËRGJITHSHME</strong><br>';
-    let successRate = totalStudents > 0 ? (((totalStudents - totalFailAll) / totalStudents) * 100).toFixed(1) : '0';
-    printHtml += '🔹 Shkalla e suksesit: ' + successRate + '% (' + (totalStudents - totalFailAll) + ' nga ' + totalStudents + ' nxënës)<br>';
-    printHtml += '🔹 Nxënës me sukses të shkëlqyeshëm: ' + (globalStats.categories.excellent || 0) + '<br>';
-    printHtml += '🔹 Nxënës me sukses të mirë (3-5): ' + ((globalStats.categories.excellent || 0) + (globalStats.categories.verygood || 0) + (globalStats.categories.good || 0)) + '<br>';
-    printHtml += '🔹 Totali i mungesave: ' + (globalStats.totalAbsencesWR + globalStats.totalAbsencesWOR) + ' (me arsye: ' + globalStats.totalAbsencesWR + ', pa arsye: ' + globalStats.totalAbsencesWOR + ')<br>';
-    printHtml += '</div>';
-    
-    // Nënshkrimet
-    printHtml += '<div class="signature-line">';
-    printHtml += '<div class="signature"><div class="signature-line-bottom">Drejtori i shkollës</div><div style="margin-top:5mm;">' + systemData.schoolInfo.principal + '</div></div>';
-    printHtml += '<div class="signature"><div class="signature-line-bottom">Përgatiti raportin</div><div style="margin-top:5mm;">Zyra e drejtorisë</div></div>';
-    printHtml += '<div class="signature"><div class="signature-line-bottom">Vula e shkollës</div></div>';
-    printHtml += '</div>';
-    
-    printHtml += '</div></body></html>';
-    
-    let win = window.open('', '_blank');
+        let win = window.open('', '_blank');
     win.document.write(printHtml);
     win.document.close();
     win.print();
