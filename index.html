@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>SISTEMI SHKOLLOR V3.2 - Plani Mesimor i Riorganizuar</title>
+    <title>SISTEM MENAGJIMI SHKOLLOR - Raportet dhe Statistikat</title>
     <style>
         * {
             margin: 0;
@@ -479,19 +479,19 @@
                 padding: 10mm 12mm;
                 width: 100%;
                 height: auto;
-                min-height: 297mm;
+                min-height: 330mm;
                 box-sizing: border-box;
             }
             body, html {
                 margin: 0;
                 padding: 0;
-                width: 210mm;
+                width: 220mm;
             }
         }
         
         .certificate {
-            width: 210mm;
-            min-height: 297mm;
+            width: 220mm;
+            min-height: 330mm;
             background: white;
             padding: 12mm 15mm;
             margin: 0 auto;
@@ -874,7 +874,7 @@
 <div id="app">
     <div id="loginContainer" class="login-container">
         <div class="login-card">
-            <h2>SISTEMI SHKOLLOR V3.2</h2>
+            <h2>SISTEM MENAGJIMI SHKOLLOR</h2>
             <div class="subtitle" style="color:#666; margin-bottom:20px;">Hyni si kujdestar i klases</div>
             <input type="text" id="username" class="login-input" placeholder="Emri i perdoruesit">
             <input type="password" id="password" class="login-input" placeholder="Fjalekalimi">
@@ -882,13 +882,13 @@
             <div class="admin-link">
                 <a onclick="showAdminLogin()">Hyr si Administrator</a>
             </div>
-            <div class="author-credit" style="margin-top:15px; font-size:10px;">Naser A. Guri</div>
+            <div class="author-credit" style="margin-top:15px; font-size:09px;">Naser A. Guri</div>
         </div>
     </div>
 
     <div id="mainContainer" class="container hidden">
         <div class="header">
-            <h1>SISTEMI INTEGRATIV SHKOLLOR V3.2</h1>
+            <h1>SISTEM MENAGJIMI SHKOLLOR</h1>
             <div class="user-info">
                 <div>
                     <div>SHFMU "EMIN DURAKU" KACANIK</div>
@@ -913,12 +913,12 @@
 <div id="adminCurriculumModal" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeAdminCurriculumModal()">×</span><h2 style="color:#0b4b6e; margin-bottom:20px;">Plani Mesimor i Klasave</h2><div id="adminCurriculumContent"></div><div class="print-btn-group no-print"><button class="btn btn-primary" onclick="printAdminCurriculumPlan()">🖨️ Printo Planet Mesimore</button><button class="btn btn-primary" onclick="saveAdminCurriculum()">Ruaj ndryshimet</button><button class="btn btn-warning" onclick="closeAdminCurriculumModal()">Anulo</button></div></div></div>
 <div id="scheduleModal" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeScheduleModal()">×</span><h2 style="color:#0b4b6e; margin-bottom:20px;">Orari i Klases</h2><div id="scheduleContent"></div><div class="print-btn-group no-print"><button class="btn btn-primary" onclick="printSchedule()">🖨️ Printo Orarin</button><button class="btn btn-primary" onclick="saveSchedule()">Ruaj ndryshimet</button><button class="btn btn-warning" onclick="closeScheduleModal()">Anulo</button></div></div></div>
 <div id="holidayModal" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeHolidayModal()">×</span><h2 style="color:#0b4b6e; margin-bottom:20px;">Festat (Data qe nuk mesohet)</h2><div class="form-group"><label>Shto feste te re</label><div style="display:flex; gap:10px; flex-wrap:wrap;"><input type="text" id="holidayDate" placeholder="Data (DD/MM/YYYY)" style="width:150px;"><input type="text" id="holidayName" placeholder="Emri i festes" style="flex:2;"><label style="display:flex; align-items:center;"><input type="checkbox" id="holidaySem1"> Gjysmevjetori I</label><label style="display:flex; align-items:center;"><input type="checkbox" id="holidaySem2"> Gjysmevjetori II</label><button class="btn btn-success" onclick="addHoliday()">Shto</button></div></div><div id="holidaysList"></div><div class="print-btn-group no-print"><button class="btn btn-primary" onclick="printHolidays()">🖨️ Printo Festat</button><button class="btn btn-primary" onclick="saveHolidays()">Ruaj ndryshimet</button><button class="btn btn-warning" onclick="closeHolidayModal()">Anulo</button></div></div></div>
-<div id="changePrincipalModal" class="modal"><div class="modal-content"><span class="modal-close" onclick="closePrincipalModal()">×</span><h2 style="color:#0b4b6e; margin-bottom:20px;">Ndrysho Emrin e Drejtorit</h2><div class="form-group"><label>Emri i ri i drejtorit</label><input type="text" id="newPrincipalName" placeholder="Shkruani emrin e drejtorit"></div><div style="display:flex; gap:10px; justify-content:flex-end; margin-top:20px;"><button class="btn btn-primary" onclick="savePrincipalName()">Ruaj</button><button class="btn btn-warning" onclick="closePrincipalModal()">Anulo</button></div></div></div>
+<div id="changePrincipalModal" class="modal"><div class="modal-content"><span class="modal-close" onclick="closePrincipalModal()">×</span><h2 style="color:#0b4b6e; margin-bottom:20px;">Ndrysho Emrin e Administratorit</h2><div class="form-group"><label>Emri i ri i drejtorit</label><input type="text" id="newPrincipalName" placeholder="Shkruani emrin e drejtoreshes"></div><div style="display:flex; gap:10px; justify-content:flex-end; margin-top:20px;"><button class="btn btn-primary" onclick="savePrincipalName()">Ruaj</button><button class="btn btn-warning" onclick="closePrincipalModal()">Anulo</button></div></div></div>
 <div id="changeYearModal" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeYearModal()">×</span><h2 style="color:#0b4b6e; margin-bottom:20px;">Ndrysho Vitin Shkollor</h2><div class="form-group"><label>Viti i ri (formati: YYYY-YYYY)</label><input type="text" id="newSchoolYear" placeholder="p.sh. 2025-2026"></div><div style="display:flex; gap:10px; justify-content:flex-end; margin-top:20px;"><button class="btn btn-primary" onclick="saveSchoolYear()">Ruaj</button><button class="btn btn-warning" onclick="closeYearModal()">Anulo</button></div></div></div>
 <div id="semesterDatesModal" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeSemesterDatesModal()">×</span><h2 style="color:#0b4b6e; margin-bottom:20px;">Datat e Gjysmevjetoreve dhe Vitit Shkollor</h2><div class="date-badge"><h3>📅 Viti Shkollor</h3><div class="form-group"><label>Data e fillimit</label><input type="date" id="schoolStartDate" value=""></div><div class="form-group"><label>Data e mbarimit</label><input type="date" id="schoolEndDate" value=""></div></div><div class="date-badge"><h3>📚 Gjysmevjetori I</h3><div class="form-group"><label>Data e fillimit</label><input type="date" id="semester1StartDate" value=""></div><div class="form-group"><label>Data e mbarimit</label><input type="date" id="semester1EndDate" value=""></div></div><div class="date-badge"><h3>📖 Gjysmevjetori II</h3><div class="form-group"><label>Data e fillimit</label><input type="date" id="semester2StartDate" value=""></div><div class="form-group"><label>Data e mbarimit</label><input type="date" id="semester2EndDate" value=""></div></div><div style="display:flex; gap:10px; justify-content:flex-end; margin-top:20px;"><button class="btn btn-primary" onclick="saveSemesterDates()">Ruaj datat</button><button class="btn btn-warning" onclick="closeSemesterDatesModal()">Anulo</button></div></div></div>
 <div id="changePasswordModal" class="modal"><div class="modal-content"><span class="modal-close" onclick="closePasswordModal()">×</span><h2 style="color:#0b4b6e; margin-bottom:20px;">Ndrysho Fjalekalimin</h2><div class="form-group"><label>Lloji</label><select id="passwordTypeSelect" onchange="togglePasswordType()"><option value="teacher">Kujdestar</option><option value="admin">Administrator (admin)</option></select></div><div class="form-group" id="teacherSelectGroup"><label>Kujdestari</label><select id="passwordTeacherSelect"></select></div><div class="form-group" id="adminPasswordGroup" style="display:none;"><label>Fjalekalimi i ri per admin</label><input type="text" id="adminNewPassword" placeholder="Vendosni fjalekalimin e ri per admin"></div><div class="form-group"><label>Fjalekalimi i ri</label><input type="text" id="newPassword" placeholder="Vendosni fjalekalimin e ri"></div><div style="display:flex; gap:10px; justify-content:flex-end; margin-top:20px;"><button class="btn btn-primary" onclick="saveTeacherPassword()">Ruaj</button><button class="btn btn-warning" onclick="closePasswordModal()">Anulo</button></div></div></div>
 <div id="statsModal" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeStatsModal()">×</span><h2 style="color:#0b4b6e; margin-bottom:20px;" id="statsModalTitle">Statistikat e Klases</h2><div id="statsModalContent"></div><div class="print-btn-group no-print"><button class="btn btn-primary" onclick="printStatsModal()">🖨️ Printo Statistikat</button><button class="btn btn-warning" onclick="closeStatsModal()">Mbyll</button></div></div></div>
-<div id="behaviorModal" class="modal"><div class="modal-content" style="max-width:500px;"><span class="modal-close" onclick="closeBehaviorModal()">×</span><h2 style="color:#0b4b6e; margin-bottom:20px;">Ndrysho Sjelljen e Nxënësit</h2><div id="behaviorStudentInfo"></div><div class="form-group"><label>Sjellja</label><select id="behaviorValue" class="behavior-select" style="width:100%; padding:10px;"><option value="Shembullore">Shembullore</option><option value="Shume mire">Shume mire</option><option value="Mire">Mire</option><option value="Mjaftueshme">Mjaftueshme</option><option value="Keq">Keq</option></select></div><div style="display:flex; gap:10px; justify-content:flex-end; margin-top:20px;"><button class="btn btn-primary" onclick="saveBehavior()">Ruaj</button><button class="btn btn-warning" onclick="closeBehaviorModal()">Anulo</button></div></div></div>
+<div id="behaviorModal" class="modal"><div class="modal-content" style="max-width:500px;"><span class="modal-close" onclick="closeBehaviorModal()">×</span><h2 style="color:#0b4b6e; margin-bottom:20px;">Ndrysho Sjelljen e Nxënësit</h2><div id="behaviorStudentInfo"></div><div class="form-group"><label>Sjellja</label><select id="behaviorValue" class="behavior-select" style="width:100%; padding:12px;"><option value="Shembullore">Shembullore</option><option value="Shume mire">Shume mire</option><option value="Mire">Mire</option><option value="Mjaftueshme">Mjaftueshme</option><option value="Keq">Keq</option></select></div><div style="display:flex; gap:10px; justify-content:flex-end; margin-top:20px;"><button class="btn btn-primary" onclick="saveBehavior()">Ruaj</button><button class="btn btn-warning" onclick="closeBehaviorModal()">Anulo</button></div></div></div>
 <div id="resetConfirmModal" class="modal"><div class="modal-content" style="max-width:450px;"><span class="modal-close" onclick="closeResetModal()">×</span><h2 style="color:#c62828; margin-bottom:15px;">⚠️ Rivendosje e të Dhënave</h2><p style="margin-bottom:15px;">Ky veprim do të rivendosë të gjitha të dhënat në gjendjen fillestare (24 klasat me 20 nxënës secila dhe kujdestarët e paracaktuar).</p><p style="margin-bottom:20px; color:#c62828; font-weight:bold;">Të dhënat aktuale do të humbasin! A jeni i sigurt?</p><div style="display:flex; gap:10px; justify-content:center;"><button class="btn btn-danger" onclick="confirmResetData()">Po, Rivendos</button><button class="btn btn-primary" onclick="closeResetModal()">Anulo</button></div></div></div>
 
 <script>
@@ -928,21 +928,21 @@
     
     // Lëndët globale
     let ALL_SUBJECTS = [
-        { code: 'SQ', key: 'gjuheshqipe', name: 'Gjuhe Shqipe', group: 'Gjuhe dhe komunikim' },
-        { code: 'EN', key: 'anglisht', name: 'Gjuhe Angleze', group: 'Gjuhe dhe komunikim' },
-        { code: 'DE', key: 'gjermanisht', name: 'Gjuhe Gjermane', group: 'Gjuhe dhe komunikim' },
-        { code: 'MZ', key: 'muzike', name: 'Edukate Muzikore', group: 'Gjuhe dhe komunikim' },
-        { code: 'VZ', key: 'vizatim', name: 'Edukate Figurative', group: 'Gjuhe dhe komunikim' },
-        { code: 'MA', key: 'matematike', name: 'Matematike', group: 'Matematike' },
-        { code: 'FZ', key: 'fizike', name: 'Fizike', group: 'Shkencat natyrore' },
-        { code: 'KM', key: 'kimi', name: 'Kimi', group: 'Shkencat natyrore' },
-        { code: 'BG', key: 'biologji', name: 'Biologji', group: 'Shkencat natyrore' },
-        { code: 'HS', key: 'histori', name: 'Histori', group: 'Shoqeria dhe mjedisi' },
-        { code: 'GJ', key: 'gjeografi', name: 'Gjeografi', group: 'Shoqeria dhe mjedisi' },
-        { code: 'EQ', key: 'edqytetare', name: 'Edukate Qytetare', group: 'Shoqeria dhe mjedisi' },
+        { code: 'SHQ', key: 'gjuheshqipe', name: 'Gjuhe Shqipe', group: 'Gjuhe dhe komunikim' },
+        { code: 'ENG', key: 'anglisht', name: 'Gjuhe Angleze', group: 'Gjuhe dhe komunikim' },
+        { code: 'GJER', key: 'gjermanisht', name: 'Gjuhe Gjermane', group: 'Gjuhe dhe komunikim' },
+        { code: 'MUZ', key: 'muzike', name: 'Edukate Muzikore', group: 'Gjuhe dhe komunikim' },
+        { code: 'VIZ', key: 'vizatim', name: 'Edukate Figurative', group: 'Gjuhe dhe komunikim' },
+        { code: 'MAT', key: 'matematike', name: 'Matematike', group: 'Matematike' },
+        { code: 'FIZ', key: 'fizike', name: 'Fizike', group: 'Shkencat natyrore' },
+        { code: 'KIM', key: 'kimi', name: 'Kimi', group: 'Shkencat natyrore' },
+        { code: 'BIO', key: 'biologji', name: 'Biologji', group: 'Shkencat natyrore' },
+        { code: 'HIS', key: 'histori', name: 'Histori', group: 'Shoqeria dhe mjedisi' },
+        { code: 'GJEO', key: 'gjeografi', name: 'Gjeografi', group: 'Shoqeria dhe mjedisi' },
+        { code: 'EDQ', key: 'edqytetare', name: 'Edukate Qytetare', group: 'Shoqeria dhe mjedisi' },
         { code: 'TK', key: 'teknologji', name: 'Teknologji', group: 'Jeta dhe puna' },
-        { code: 'EF', key: 'edfizike', name: 'Edukate Fizike', group: 'Edukate fizike, sport dhe shendeti' },
-        { code: 'MZ2', key: 'msimzgjedhor', name: 'Mesim Zgjedhor', group: 'Mesimi me zgjedhje' }
+        { code: 'EDF', key: 'edfizike', name: 'Edukate Fizike', group: 'Edukate fizike, sport dhe shendeti' },
+        { code: 'MZGJ', key: 'msimzgjedhor', name: 'Mesim Zgjedhor', group: 'Mesimi me zgjedhje' }
     ];
 
     let systemData = {
@@ -1574,27 +1574,27 @@
         
         let html = `
         <div class="class-card-large">
-            <h2>🏫 PANELI I ADMINISTRATORIT - DREJTORIA</h2>
+            <h2> PANELI I ADMINISTRATORIT - DREJTORIA</h2>
             <div class="date-badge">
-                <span>📅 ${dateInfo.statusText}</span>
+                <span> ${dateInfo.statusText}</span>
                 <div class="date-status">📘 Gjysmevjetori I: ${dateInfo.sem1Start} - ${dateInfo.sem1End}</div>
                 <div class="date-status">📙 Gjysmevjetori II: ${dateInfo.sem2Start} - ${dateInfo.sem2End}</div>
                 <button class="btn btn-info" style="margin-top:8px;" onclick="openSemesterDatesModal()">📅 Vendos Datat</button>
             </div>
             
             <div class="report-actions">
-                <button class="btn btn-primary" onclick="openPrincipalModal()">👤 Ndrysho Drejtorin</button>
+                <button class="btn btn-primary" onclick="openPrincipalModal()">👤 Ndrysho Administratorin</button>
                 <button class="btn btn-success" onclick="openPasswordModal()">🔑 Ndrysho Fjalëkalimet</button>
                 <button class="btn btn-info" onclick="openYearModal()">📅 Ndrysho Vitin</button>
                 <button class="btn btn-info" onclick="openAdminCurriculumModal()">📚 Plani Mësimor</button>
-                <button class="btn btn-warning" onclick="openHolidayModal()">🎉 Festat</button>
-                <button class="btn btn-info" onclick="printDirectorReport()">📄 Raporti i Drejtorisë</button>
-                <button class="btn btn-warning" onclick="openSubjectsModalGlobal()">📖 Menaxho Lëndët</button>
-                <button class="btn btn-primary" onclick="openActiveModal()">🏷️ Menaxho Aktivet</button>
-                <button class="btn btn-warning" onclick="showGlobalStats()">📊 Statistikat e Avancuara</button>
+                <button class="btn btn-warning" onclick="openHolidayModal()"> Festat</button>
+                <button class="btn btn-info" onclick="printDirectorReport()"> Raporti i Drejtorisë</button>
+                <button class="btn btn-warning" onclick="openSubjectsModalGlobal()"> Menaxho Lëndët</button>
+                <button class="btn btn-primary" onclick="openActiveModal()"> Menaxho Aktivet</button>
+                <button class="btn btn-warning" onclick="showGlobalStats()"> Statistikat e përgjithshme</button>
                 <button class="btn btn-danger" onclick="takeBackup()">💾 Backup në Memorie</button>
                 <button class="btn btn-success" onclick="backupToFile()">💿 Shkarko Backup</button>
-                <button class="btn btn-primary" onclick="restoreFromFile()">📂 Restauro nga Backup</button>
+                <button class="btn btn-primary" onclick="restoreFromFile()"> Restauro nga Backup</button>
                 <button class="btn btn-primary" onclick="undoChanges()">↩️ Undo</button>
                 <button class="btn btn-danger" onclick="openResetModal()">🔄 Rivendos Default</button>
             </div>
@@ -1618,9 +1618,9 @@
                 <div class="dashboard-widget" style="background:#0b4b6e;" onclick="alert('📚 Totali i klasave: ${globalStats.classesStats.length}')">
                     <h3>🏫 KLASA</h3><div class="number">${globalStats.classesStats.length}</div>
                 </div>
-                <div class="dashboard-widget" style="background:#2e7d32;" onclick="alert('👨‍🎓 Totali nxënës: ${globalStats.totalStudents}\n👦 Djem: ${globalStats.totalMale} (${getPercent(globalStats.totalMale, globalStats.totalStudents)}%)\n👧 Vajza: ${globalStats.totalFemale} (${getPercent(globalStats.totalFemale, globalStats.totalStudents)}%)')">
-                    <h3>👨‍🎓 NXËNËS</h3><div class="number">${globalStats.totalStudents}</div>
-                    <div style="font-size:11px;">👦 ${globalStats.totalMale} (${getPercent(globalStats.totalMale, globalStats.totalStudents)}%) | 👧 ${globalStats.totalFemale} (${getPercent(globalStats.totalFemale, globalStats.totalStudents)}%)</div>
+                <div class="dashboard-widget" style="background:#2e7d32;" onclick="alert(' Totali nxënës: ${globalStats.totalStudents}\nM Djem: ${globalStats.totalMale} (${getPercent(globalStats.totalMale, globalStats.totalStudents)}%)\nF Vajza: ${globalStats.totalFemale} (${getPercent(globalStats.totalFemale, globalStats.totalStudents)}%)')">
+                    <h3> NXËNËS</h3><div class="number">${globalStats.totalStudents}</div>
+                    <div style="font-size:11px;">M ${globalStats.totalMale} (${getPercent(globalStats.totalMale, globalStats.totalStudents)}%) | F ${globalStats.totalFemale} (${getPercent(globalStats.totalFemale, globalStats.totalStudents)}%)</div>
                 </div>
                 <div class="dashboard-widget" style="background:#ed6c02;" onclick="alert('📊 Mesatarja e përgjithshme: ${globalStats.overallAvg}')">
                     <h3>📊 MESATARJA</h3><div class="number">${globalStats.overallAvg}</div>
@@ -1642,10 +1642,10 @@
                     let totalPercent = totalStudents > 0 ? ((totalCount / totalStudents) * 100).toFixed(1) : '0';
                     let categoryName = c==='excellent'?'⭐ Shkëlqyeshëm':c==='verygood'?'🌟 Shumë mirë':c==='good'?'📖 Mirë':c==='sufficient'?'⚠️ Mjaftueshëm':c==='fail'?'❌ Pamjaftueshëm':'📝 I panotuar';
                     let categoryColor = c==='excellent'?'#e8f5e9':c==='verygood'?'#e3f2fd':c==='good'?'#fff3e0':c==='sufficient'?'#ffebee':c==='fail'?'#ffcdd2':'#f5f5f5';
-                    return `<div class="stat-card" style="background:${categoryColor};" onclick="alert('${categoryName}\n📊 Gjithsej: ${totalCount} (${totalPercent}%)\n👦 Djem: ${maleCount} (${malePercent}%)\n👧 Vajza: ${femaleCount} (${femalePercent}%)')">
+                    return `<div class="stat-card" style="background:${categoryColor};" onclick="alert('${categoryName}\n📊 Gjithsej: ${totalCount} (${totalPercent}%)\nM Djem: ${maleCount} (${malePercent}%)\nF Vajza: ${femaleCount} (${femalePercent}%)')">
                         <h4>${categoryName}</h4>
                         <div class="stat-value">${totalCount}</div>
-                        <div style="font-size:10px;">📊 ${totalPercent}% | 👦 ${malePercent}% | 👧 ${femalePercent}%</div>
+                        <div style="font-size:10px;">📊 ${totalPercent}% | M ${malePercent}% | F ${femalePercent}%</div>
                     </div>`;
                 }).join('')}
             </div></div>
@@ -1711,7 +1711,7 @@
         
         document.getElementById('dynamicContent').innerHTML = html;
         document.getElementById('userNameDisplay').innerHTML = '👑 ADMINISTRATORI | DREJTORI: ' + systemData.schoolInfo.principal;
-        document.getElementById('principalDisplay').innerHTML = '👤 Drejtori: ' + systemData.schoolInfo.principal;
+        document.getElementById('principalDisplay').innerHTML = '👤 Drejtoresha: ' + systemData.schoolInfo.principal;
         document.getElementById('schoolYearDisplay').innerHTML = systemData.schoolInfo.year;
         setupKeyboardNavigation();
     }
@@ -2165,7 +2165,7 @@
             }
             .certificate { 
                 width: 100%;
-                max-width: 210mm;
+                max-width: 220mm;
                 background: white; 
                 padding: 5mm 8mm; 
                 margin: 0 auto; 
@@ -2209,7 +2209,7 @@
                 display: flex; 
                 justify-content: space-between; 
                 margin: 2mm 0; 
-                font-size: 12px; 
+                font-size: 14px; 
                 flex-wrap: wrap; 
                 gap: 5px; 
             }
@@ -2307,13 +2307,13 @@
             
             <div class="certificate-avg-box">
                 <div class="certificate-avg-value">${avg}</div>
-                <div style="font-size: 11px; margin-top: 1px;">Mesatarja: ${successDesc}</div>
-                ${hasOne ? `<div style="color: #c62828; font-size: 9px; margin-top: 2px;">⚠️ Ka ${onesCount} notë/nota 1</div>` : ''}
+                <div style="font-size: 12px; margin-top: 1px;">Mesatarja: ${successDesc}</div>
+                ${hasOne ? `<div style="color: #c62828; font-size: 10px; margin-top: 2px;">⚠️ Ka ${onesCount} notë/nota 1</div>` : ''}
             </div>
             
             <div class="certificate-absences-box">
                 <strong style="font-size: 12px;">MUNGESAT</strong>
-                <div style="display: flex; justify-content: space-between; margin-top: 2mm; font-size: 10px;">
+                <div style="display: flex; justify-content: space-between; margin-top: 2mm; font-size: 11px;">
                     <span>✅ Me arsye: ${abs.withReason}</span>
                     <span>❌ Pa arsye: ${abs.withoutReason}</span>
                     <span><strong>📊 Gjithsej: ${abs.total}</strong></span>
@@ -2323,7 +2323,7 @@
             <div class="certificate-signatures">
                 <div class="certificate-signature">
                     <div class="certificate-signature-line">Kujdestari</div>
-                    <div style="font-size: 9px; margin-top: 2mm;">${escapeHtml(teacherName)}</div>
+                    <div style="font-size: 10px; margin-top: 2mm;">${escapeHtml(teacherName)}</div>
                 </div>
                 <div class="certificate-signature">
                     <div class="certificate-signature-line">Drejtoresha</div>
@@ -2375,7 +2375,7 @@
         let semesterName = semester === 'semester1' ? 'GJYSMEVJETORI I' : (semester === 'semester2' ? 'GJYSMEVJETORI II' : 'PËRFUNDIMTAR');
         let teacher = systemData.teachers.find(t => t.classId === classObj.id);
         let teacherName = teacher ? teacher.name : '__________________';
-        let principalName = systemData.schoolInfo.principal || 'Drejtori';
+        let principalName = systemData.schoolInfo.principal || 'Drejtoresha';
         let date = formatDate();
         
         let allHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Dëftesat - ' + className + '</title>';
@@ -2499,7 +2499,7 @@
         
         let html = '<h3>' + classObj.className + ' - ' + semesterName + '</h3>';
         html += '<div style="overflow-x: auto;">';
-        html += '<table class="stats-modal-table" style="width:100%; border-collapse:collapse; font-size:11px;">';
+        html += '<table class="stats-modal-table" style="width:100%; border-collapse:collapse; font-size:12px;">';
         
         html += '<thead>';
         html += '<tr style="background:#0b4b6e; color:white;">';
@@ -2676,8 +2676,8 @@
                 <div style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%); border-radius: 10px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
                     <div><strong>📚 Totali i klasave:</strong> ${globalStats.classesStats ? globalStats.classesStats.length : 0}</div>
                     <div><strong>👨‍🎓 Totali i nxënësve:</strong> ${globalStats.totalStudents || 0}</div>
-                    <div><strong>👦 Djem:</strong> ${globalStats.totalMale || 0} (${globalStats.totalStudents > 0 ? ((globalStats.totalMale / globalStats.totalStudents) * 100).toFixed(1) : 0}%)</div>
-                    <div><strong>👧 Vajza:</strong> ${globalStats.totalFemale || 0} (${globalStats.totalStudents > 0 ? ((globalStats.totalFemale / globalStats.totalStudents) * 100).toFixed(1) : 0}%)</div>
+                    <div><strong>M Djem:</strong> ${globalStats.totalMale || 0} (${globalStats.totalStudents > 0 ? ((globalStats.totalMale / globalStats.totalStudents) * 100).toFixed(1) : 0}%)</div>
+                    <div><strong>F Vajza:</strong> ${globalStats.totalFemale || 0} (${globalStats.totalStudents > 0 ? ((globalStats.totalFemale / globalStats.totalStudents) * 100).toFixed(1) : 0}%)</div>
                     <div><strong>📊 Mesatarja:</strong> ${overallTotalAvg.toFixed(2)}</div>
                     <div><strong>✅ Mungesat me arsye:</strong> ${globalStats.totalAbsencesWR || 0}</div>
                     <div><strong>❌ Mungesat pa arsye:</strong> ${globalStats.totalAbsencesWOR || 0}</div>
@@ -3031,7 +3031,16 @@
     printHtml += '<td>' + ((globalStats.weakOnes?.one || 0) + (globalStats.weakOnes?.two || 0) + (globalStats.weakOnes?.threePlus || 0)) + '</td>';
     printHtml += '</tr>';
     printHtml += '</tbody></table>';
-        let win = window.open('', '_blank');
+    // Përmbledhje
+    printHtml += '<div class="summary-box">';printHtml += '<strong>PËRMBLEDHJE E PËRGJITHSHME</strong><br>';
+    let successRate = totalStudents > 0 ? (((totalStudents - totalFailAll) / totalStudents) * 100).toFixed(1) : '0';printHtml += ' Shkalla e suksesit: ' + successRate + '% (' + (totalStudents - totalFailAll) + ' nga ' + totalStudents + ' nxënës)<br>';printHtml += ' Nxënës me sukses të shkëlqyeshëm: ' + (globalStats.categories.excellent || 0) + '<br>';printHtml += ' Nxënës me sukses të mirë (3-5): ' + ((globalStats.categories.excellent || 0) + (globalStats.categories.verygood || 0) + (globalStats.categories.good || 0)) + '<br>';
+    printHtml += ' Totali i mungesave: ' + (globalStats.totalAbsencesWR + globalStats.totalAbsencesWOR) + ' (me arsye: ' + globalStats.totalAbsencesWR + ', pa arsye: ' + globalStats.totalAbsencesWOR + ')<br>';
+    printHtml += '</div>';
+    // Nënshkrimet
+    printHtml += '<div class="signature-line">';
+    printHtml += '<div class="signature"><div class="signature-line-bottom">Drejtoresha e shkollës</div><div style="margin-top:5mm;">' + systemData.schoolInfo.principal + '</div></div>';
+    printHtml += '<div class="signature"><div class="signature-line-bottom">Përgatiti raportin</div><div style="margin-top:2mm;">Zyra e drejtorisë</div></div>';printHtml += '<div class="signature"><div class="signature-line-bottom">Vula e shkollës</div></div>';printHtml += '</div>';printHtml += '</div></body></html>';
+     let win = window.open('', '_blank');
     win.document.write(printHtml);
     win.document.close();
     win.print();
